@@ -1,4 +1,7 @@
+import menu
 import pygame
+from pygame.locals import *
+from sys import exit
 
 
 class Menu:
@@ -8,8 +11,7 @@ class Menu:
         self.screen = screen
         self.current = 0
 
-    def run(self, elapse):
-        self.draw()
+    def run(self):
         for e in pygame.event.get():
             if e.type == QUIT:
                 return'quit'
@@ -21,7 +23,3 @@ class Menu:
                 elif e.key == K_RETURN:
                     return self.OPTS[self.current].lower()
         return 'menu'
-
-
-def test():
-    print("running")
